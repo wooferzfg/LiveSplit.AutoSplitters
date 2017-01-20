@@ -17,5 +17,5 @@ reset
 
 split
 {
-    return current.levelNumber > old.levelNumber || (current.levelNumber == 17 && current.bossHealth == 0 && old.bossHealth > 0);
+    return (current.levelNumber > old.levelNumber && old.levelNumber != 4) || (current.levelNumber == 17 && current.bossHealth == 0 && old.bossHealth > 0);
 }
