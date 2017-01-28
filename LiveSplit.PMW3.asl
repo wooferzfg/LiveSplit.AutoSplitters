@@ -4,11 +4,13 @@ state("PMA_W32_M")
     byte bossHealth : "PMA_W32_M.exe", 0x3CDED0, 0x41c;
     byte startState : "PMA_W32_M.exe", 0x45D4DC, 0x32c, 0x50f;
     byte backToMain : "PMA_W32_M.exe", 0x47D67C, 0x554, 0x2cc;
+    byte backToTitle : "PMA_W32_M.exe", 0x47D67C, 0x6b0, 0x64c;
 }
 
 start
 {
-    return current.levelNumber == 44 && current.backToMain == 0 
+    return current.levelNumber == 44 
+	&& current.backToMain == 0 && current.backToTitle == 0 
         && old.startState == 0 && current.startState == 1;
 }
 
