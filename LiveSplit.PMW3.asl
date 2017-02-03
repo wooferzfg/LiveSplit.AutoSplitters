@@ -6,6 +6,7 @@ state("PMA_W32_M")
     byte normalStartState : "PMA_W32_M.exe", 0x45D4DC, 0x1D8, 0x6C4, 0x4F0, 0x4DF;
     byte backToMain : "PMA_W32_M.exe", 0x47D67C, 0x554, 0x2CC;
     byte backToTitle : "PMA_W32_M.exe", 0x47D67C, 0x6B0, 0x64C;
+    byte loading : "PMA_W32_M.exe", 0x3CDF4C, 0x14;
 }
 
 start
@@ -26,4 +27,9 @@ split
     return (current.levelNumber > old.levelNumber && old.levelNumber != 4) 
         || (current.levelNumber == 17 && current.bossHealth == 0 && old.bossHealth > 0 
 	&& timer.CurrentTime.RealTime - (timer.CurrentSplitIndex > 0 ? timer.Run[timer.CurrentSplitIndex - 1].SplitTime.RealTime : TimeSpan.Zero) > TimeSpan.FromSeconds(0.25));
+}
+
+isLoading
+{
+    return current.loading == 0;
 }
