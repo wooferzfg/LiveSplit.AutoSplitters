@@ -6,7 +6,7 @@ state("PMA_W32_M")
     byte normalStartState : "PMA_W32_M.exe", 0x45D4DC, 0x1D8, 0x6C4, 0x4F0, 0x4DF;
     byte backToMain : "PMA_W32_M.exe", 0x47D67C, 0x554, 0x2CC;
     byte backToTitle : "PMA_W32_M.exe", 0x47D67C, 0x6B0, 0x64C;
-    byte loading : "PMA_W32_M.exe", 0x3CDF4C, 0x14;
+    byte notLoading : "PMA_W32_M.exe", 0x3CDF4C, 0x14;
 }
 
 start
@@ -31,5 +31,5 @@ split
 
 isLoading
 {
-    return current.loading == 0;
+    return current.notLoading == 0;
 }
