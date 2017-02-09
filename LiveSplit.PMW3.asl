@@ -19,7 +19,7 @@ start
 
 reset
 {
-    return current.levelNumber == 44 && (old.levelNumber != 44 || current.backToTitle == 128);
+    return current.levelNumber == 44 && old.levelNumber < 18;
 }
 
 split
