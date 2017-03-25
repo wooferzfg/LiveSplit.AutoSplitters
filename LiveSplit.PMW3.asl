@@ -19,7 +19,7 @@ state("PMA_W32_M")
 
 startup
 {
-	settings.Add("hundo", false, "Split For All Fruit");
+	settings.Add("hundo", false, "Split For All Fruit, Statues, and Galaxians");
 }
 
 start
