@@ -38,7 +38,7 @@ reset
 split
 {
     return (current.levelNumber > old.levelNumber && old.levelNumber != 4)
-        || (current.levelNumber == 17 && current.bossHealth == 0 && old.bossHealth > 0 && old.bossHealth < 5) 
+        || (current.levelNumber == 17 && current.bossHealth == 0 && old.bossHealth > 0 && old.bossHealth < 7) 
         && timer.CurrentTime.RealTime - (timer.CurrentSplitIndex > 0 ? (timer.Run[timer.CurrentSplitIndex - 1].SplitTime.RealTime ?? TimeSpan.Zero) : TimeSpan.Zero) > TimeSpan.FromSeconds(0.25);
 }
 
