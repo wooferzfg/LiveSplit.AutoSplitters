@@ -6,7 +6,7 @@ state("PMA_W32_M")
 
 update
 {
-    if (current.lives == 6) {
+    if (current.lives <= 6) {
         memory.WriteBytes((IntPtr)current.livesPtr + 0x10C, BitConverter.GetBytes(99));
     }
 }
